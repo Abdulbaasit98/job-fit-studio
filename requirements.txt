@@ -1,0 +1,26 @@
+# Lean requirements for Streamlit Community Cloud deployment.
+#
+# Deliberately excludes:
+#   - sentence-transformers / torch: app.py hardcodes TfidfEmbedding, and
+#     sentence_transformers is only ever imported LAZILY inside
+#     SentenceTransformerEmbedding.__init__ (embeddings.py) -- it's never
+#     actually imported at runtime for this deployment. Including it
+#     anyway would pull in torch (100+ MB) for zero benefit and risks
+#     hitting Streamlit Community Cloud's free-tier memory limit.
+#   - google-auth / google-auth-oauthlib / google-api-python-client:
+#     Gmail drafting is disabled in the hosted UI (see IS_DEPLOYED in
+#     app.py) since the OAuth local-server flow can't work on a remote
+#     host. Not needed at runtime for the deployed version.
+#   - reportlab: test-only dependency (generates a PDF fixture in
+#     tests/test_document_ingest.py), not used by the app itself.
+#
+# For local development / running the full test suite, use requirements.txt
+# instead, which includes everything.
+
+numpy
+scikit-learn
+requests
+pypdf
+python-docx
+streamlit
+anthropic

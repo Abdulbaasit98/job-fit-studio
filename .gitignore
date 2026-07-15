@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+
+# Gmail OAuth secrets -- NEVER commit these
+.env
+token.json
+credentials.json
