@@ -1,4 +1,4 @@
-# job-fit-studio — Complete: Ingestion + RAG Matcher + Capability Gate + Grounded Drafting + Gmail Drafts
+# job-fit-studio — Job-fit analyzer: ingestion, matching, capability gate, grounded drafting, Gmail drafts
 
 An honest job-fit analyzer: build your capability corpus once — from your
 resume, portfolio documents, and GitHub repos — then for every new job
@@ -8,10 +8,10 @@ to draft an application for roles you're not genuinely matched to, and
 in verified evidence — saved directly as a Gmail draft with your resume
 attached, ready for you to review and send yourself.
 
-This is **Phase 1**: ingestion (from three sources), requirement parsing,
-RAG-based matching, and the capability gate. LLM-drafted resume/cover
-letter and the Gmail draft-only integration with attachments are Phase
-2/3 (see below).
+All three phases are implemented: ingestion (from three sources),
+requirement parsing, embedding-based matching, the capability gate,
+LLM-grounded drafting, and Gmail draft creation with attachments (see
+the phase sections below).
 
 ## Design principle: the gate is the point
 
